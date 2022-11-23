@@ -123,16 +123,7 @@ class _MultiImagePickerViewState extends State<MultiImagePickerView> {
       padding: widget.padding ?? EdgeInsets.zero,
       child: ReorderableBuilder(
         key: Key(gridViewKey.toString()),
-        // onDragStarted: () {
-        //   setState(() {
-        //     dragging = true;
-        //   });
-        // },
-        // onDragEnd: () {
-        //   setState(() {
-        //     dragging = false;
-        //   });
-        // },
+
         scrollController: scrollController,
         enableDraggable: widget.draggable,
         dragChildBoxDecoration: widget.onDragBoxDecoration ??

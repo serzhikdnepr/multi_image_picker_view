@@ -10,7 +10,7 @@ class MultiImagePickerController with ChangeNotifier {
   final int maxImages;
 
   MultiImagePickerController({
-    this.allowedImageTypes = const ['png', 'jpeg', 'jpg'],
+    this.allowedImageTypes = const ['jpg', 'pdf', 'doc'],
     this.maxImages = 10,
   }) {
     print('init');
@@ -30,8 +30,7 @@ class MultiImagePickerController with ChangeNotifier {
   Future<bool> pickImages() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
         allowMultiple: true,
-        type: FileType.custom,
-        allowedExtensions: allowedImageTypes);
+        type: FileType.image);
     if (result != null && result.files.isNotEmpty) {
       _addImages(result.files
           .where((e) =>
